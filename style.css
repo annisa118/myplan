@@ -12,14 +12,12 @@ body {
   background: linear-gradient(to bottom, #e9ffdb, white);
   min-height: 100vh;
   overflow-x: hidden;
-   margin: 0;
+  margin: 0;
   padding: 0;
-  padding-top: 70px; /* sesuaikan dengan tinggi navbar */
 }
-#page2, #page3 {
+#page3 {
   padding-top: 100px; /* biar isi ga ketimpa navbar */
 }
-
 
 .navbar {
   float: right;
@@ -35,14 +33,17 @@ body {
   z-index: 1000;
   opacity: 0;
   transition: opacity 0.5s ease-in;
-  background: transparent; /* Navbar tidak punya background */
-   margin-top: 0;   /* ini yang menurunkan navbar dari atas */
-  
+  background: linear-gradient(
+    to bottom,
+    #e9ffdb,
+    #e9ffdb
+  ); /* Navbar tidak punya background */
+  margin-top: 0; /* ini yang menurunkan navbar dari atas */
 }
 #navbar.scrolled {
   background-color: #e9ffdb; /* ubah sesuai warna yang kamu mau */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-   transition: background-color 0.3s ease; /* opsional, biar kelihatan naik */
+  transition: background-color 0.3s ease; /* opsional, biar kelihatan naik */
 }
 
 .h1 {
@@ -71,10 +72,19 @@ body {
   padding: 40px;
   background-color: #ffffff;
   border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);/* jarak antara gambar dan teks */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* jarak antara gambar dan teks */
 }
+
+#page2 {
+  min-height: 100vh;
+  /* padding: 100px 60px; */
+  background-image: url("./images/home-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .home {
-  height: 100vh;       /* Tinggi persis layar */
   overflow: hidden;
 }
 .home .hover-image {
@@ -108,7 +118,7 @@ body {
 .teks h2 {
   margin: 0;
   font-size: 65px; /* lebih besar */
-  font-family: 'Playfair Display', serif; /* font elegan */
+  font-family: "Playfair Display", serif; /* font elegan */
   font-weight: 700;
   line-height: 1.2;
   color: #084d18;
@@ -117,7 +127,8 @@ body {
 .teks p {
   margin: 20px 0;
   font-size: 18Spx;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .teks button {
@@ -199,12 +210,12 @@ nav ul li a:hover {
   color: #1c1c3c;
   font-weight: 600;
   font-size: 16px;
-   position: relative;
+  position: relative;
   padding-bottom: 4px;
 }
 
 .nav-links li a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0%;
   height: 2px;
@@ -219,25 +230,32 @@ nav ul li a:hover {
   width: 100%;
 }
 .hero-section {
+  height: 100vh; /* Tinggi persis layar */
+  padding: 0px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px;
+  /* margin: 100px 60px; */
   min-height: 80vh;
   overflow: hidden;
+  background-color: #e9ffdb;
+  border-radius: 20px;
 }
 
 .left-content {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding-right: 40px;
   transition: opacity 0.5s ease-in;
-
 }
 
 .left-content h2 {
-   margin: 0;
+  margin: 0;
   font-size: 48px; /* lebih besar */
-  font-family: 'Playfair Display', serif; /* font elegan */
+  font-family: "Playfair Display", serif; /* font elegan */
   font-weight: 700;
   line-height: 1.2;
   color: #055921;
@@ -250,9 +268,9 @@ nav ul li a:hover {
 
 .left-content h2:hover {
   transform: scale(1.05); /* Membesar 5% saat hover */
-   background: linear-gradient(90deg, #ff6ec4, #7873f5); /* gradasi warna */
+  background: linear-gradient(90deg, #ff6ec4, #7873f5); /* gradasi warna */
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;/* Bisa diganti dengan warna apapun */
+  -webkit-text-fill-color: transparent; /* Bisa diganti dengan warna apapun */
 }
 
 .left-content .highlight {
@@ -289,7 +307,6 @@ nav ul li a:hover {
 .right-image {
   flex: 1;
   text-align: center;
-  
 }
 
 .right-image img {
@@ -347,71 +364,82 @@ nav ul li a:hover {
 /* Logo kecil di navbar */
 .nav-left img {
   width: 100px;
-  height: auto;
+  height: 100px;
   margin-top: 10px;
 }
 .hamburger {
-    display: none; /* Sembunyikan hamburger di desktop */
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
 }
 
 .bar {
-    height: 3px;
-    width: 25px;
-    background-color: white;
-    margin: 4px 0;
+  width: 25px;
+  height: 3px;
+  background-color: #055921;
+  margin: 5px 0;
+  transition: 0.4s;
 }
 
 .menu-mobile {
-    display: none;
-    flex-direction: column;
-    gap: 20px;
-    padding: 10px 0; 
-    width: 250px;
-    background-color: #055921;
-    text-align: center;
-    position: absolute;
-    top: 39px;
-    right: 0;
-    transition: transform 0.3s ease;
-  }
-  .menu-mobile a {
-    text-decoration: none; /* Hilangkan garis bawah pada teks */
-    color: white;          /* Warna teks */
-    font-size: 16px;       /* Ukuran teks */
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  background-color: #e9ffdb;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
-  
 
-/* Media Query untuk tampilan mobile */
+.menu-mobile.active {
+  display: block;
+}
+
+.menu-mobile li {
+  list-style: none;
+  margin: 15px 0;
+}
+
+.menu-mobile a {
+  color: #055921;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+  padding: 10px 0;
+}
+
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
 
+  #page2 {
+    padding: 60px 20px;
+  }
 
-    .menu-dekstop {
-        display: none !important;
-      }
-    
-      .meracalculator {
-        width: 100%;
-      }
-    
-      #kalkulator {
-        padding: 10px;
-      }
-    
-      .hamburger {
-        display: flex; /* Tampilkan hamburger di mobile */
-        flex-direction: column;
-        cursor: pointer;
-      }
-    
-      .hamburger > .bar {
-        width: 30px;
-        height: 3px;
-        background: #ffffff;
-        margin: 5px 0; /* Jarak antar garis */
-      }
-    }
-    .menu-mobile.active {
-  display: flex !important; /* Pastikan muncul */
+  .team-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-right .nav-links {
+    display: none;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .nav-left img {
+    height: 60px;
+  }
 }
 
 header {
@@ -462,7 +490,6 @@ header p {
   text-align: center;
   padding: 0;
   margin: 0;
-  
 }
 .page.active {
   display: block;
@@ -472,7 +499,7 @@ header p {
   font-size: 2rem;
   margin-bottom: 10px;
   color: #055921;
-  font-family:  'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 #page2 p {
@@ -559,9 +586,9 @@ select {
 }
 
 .progress-bar {
-   height: 12px;       /* sesuaikan angkanya untuk ketebalan */
-  line-height: 12px;  /* supaya teks di tengah vertikal */
-  font-size: 10px;    /* kecilkan font supaya proporsional */
+  height: 12px; /* sesuaikan angkanya untuk ketebalan */
+  line-height: 12px; /* supaya teks di tengah vertikal */
+  font-size: 10px; /* kecilkan font supaya proporsional */
   border-radius: 6px; /* tetap agar ujungnya rounded */
   transition: width 0.4s ease;
   color: white;
@@ -594,8 +621,6 @@ td {
 th {
   background-color: #f2f2f2;
 }
-
-
 
 .hidden {
   display: none;
@@ -675,6 +700,7 @@ th {
 }
 
 .team-container {
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -683,22 +709,14 @@ th {
   padding-bottom: 20px;
 }
 
-
-#about {
-  padding: 100px 20px 60px;
-  background-color: transparent;
-}
-
 .about-title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 48px; /* lebih besar */
   font-weight: 700;
   color: #055921;
   text-align: center;
-  margin: 50px auto; /* atas dan bawah auto untuk posisi tengah */
-  margin-top: 0;
+  margin-top: 50px; /* atas dan bawah auto untuk posisi tengah */
 }
-
 
 .team-container {
   display: flex;
@@ -787,12 +805,12 @@ th {
   padding: 10px;
   background-color: #fff;
   border-radius: 6px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   margin-top: 20px;
 }
 #page3 {
-  padding-top: 24px;   /* dari 120px jadi 60px */
+  padding-top: 24px; /* dari 120px jadi 60px */
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -800,11 +818,11 @@ th {
 #page3 > h2 {
   text-align: center;
   font-weight: 600;
-font-family:  'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: #055921;
- padding-top: 2px;
-   margin-bottom: 12px;  /* dari 24px jadi 16px */
-  font-size: 2rem; 
+  padding-top: 2px;
+  margin-bottom: 12px; /* dari 24px jadi 16px */
+  font-size: 2rem;
 }
 
 /* Label */
@@ -815,7 +833,6 @@ font-family:  'Playfair Display', serif;
   font-size: 0.85rem;
   color: #555;
 }
-
 
 /* Input dan select */
 #saving-form input,
@@ -879,11 +896,11 @@ font-family:  'Playfair Display', serif;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
-
 
 .modal {
   position: fixed;
@@ -891,7 +908,7 @@ font-family:  'Playfair Display', serif;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -899,17 +916,17 @@ font-family:  'Playfair Display', serif;
 }
 
 .modal-content {
- background: white;
+  background: white;
   padding: 32px 24px;
   border-radius: 24px; /* Lebih lonjong dan lembut */
   max-width: 420px;
   text-align: center;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Tambah bayangan halus */
   transition: all 0.3s ease-in-out;
-   transform: scale(0.3);
+  transform: scale(0.3);
   opacity: 0;
   transition: none;
-  background: linear-gradient(to bottom, #ffffff, #f9f9f9); 
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
 }
 
 .hidden {
@@ -927,13 +944,13 @@ font-family:  'Playfair Display', serif;
   transition: all 0.3s ease;
   font-size: 12px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    min-width: 140px; 
-     letter-spacing: 0.03em;
+  min-width: 140px;
+  letter-spacing: 0.03em;
 }
 
 #showResultsBtn:hover {
   background: linear-gradient(145deg, #a6ff00, #4caf50);
- 
+
   transform: translateY(-2px);
 }
 
@@ -990,7 +1007,8 @@ font-family:  'Playfair Display', serif;
     text-align: center;
   }
 
-  .left-content, .right-image {
+  .left-content,
+  .right-image {
     width: 100%;
     padding: 0;
   }
@@ -1003,10 +1021,19 @@ font-family:  'Playfair Display', serif;
     font-size: 16px;
   }
 
+  .about-title {
+    margin-top: 100px;
+  }
+
   .goal-buttons {
+    width: 100%;
     flex-direction: column;
     gap: 20px;
     align-items: center;
+  }
+
+  #page2 > div > h2 {
+    margin-top: 100px;
   }
 
   .goal-buttons button {
@@ -1063,7 +1090,7 @@ font-family:  'Playfair Display', serif;
   }
 
   .nav-right {
-    display: none;
+    /* display: none; */
     width: 100%;
   }
 

@@ -11,7 +11,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -28,7 +31,7 @@
 
     <!-- Logo besar -->
     <img
-      src="logo-besar.png"
+      src="./images/logo-besar.png"
       class="logo-startup"
       id="logo"
       alt="Logo Nabung Impian"
@@ -37,78 +40,103 @@
     <!-- Navbar -->
     <div class="navbar" id="navbar">
       <div class="nav-left">
-        <img src="logo-kecil.png" alt="Logo Kecil" />
+        <img src="./images/logo-kecil.png" alt="Logo Kecil" />
       </div>
-       
-      
+
       <div class="nav-right">
- <div class="hamburger" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
         <ul class="nav-links">
           <li><a href="#home" onclick="showSection('home')">Home</a></li>
           <li><a href="#page2" onclick="showSection('page2')">Menu</a></li>
           <li><a href="#about" onclick="showSection('about')">About</a></li>
           <li><a href="https://myplan.carrd.co/" target="_blank">Help</a></li>
         </ul>
-          <ul class="menu-mobile">
-                <li><a class="item-menu" href="#home" onclick="showSection('home')" >Home</a></li>
-                <li><a class="item-menu" href="#page2" onclick="showSection('page2')">Menu</a></li>
-                <li><a class="item-menu" href="#about" onclick="showSection('about')">About</a></li>
-                <li><a class="item-menu" href="https://myplan.carrd.co/" target="_blank">Help</a></li>
-                </ul>
-              
+        <ul class="menu-mobile">
+          <li>
+            <a class="item-menu" href="#home" onclick="showSection('home')"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="item-menu" href="#page2" onclick="showSection('page2')"
+              >Menu</a
+            >
+          </li>
+          <li>
+            <a class="item-menu" href="#about" onclick="showSection('about')"
+              >About</a
+            >
+          </li>
+          <li>
+            <a class="item-menu" href="https://myplan.carrd.co/" target="_blank"
+              >Help</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
 
-   <!-- Halaman Home -->
-<div id="home" class="page">
-  <div class="hero-section">
-    <div class="left-content">
-    
-      <h2 class="bold-text">Web Planner Nabung Impian</h2>
-      <p>
-        Wujudkan impian Nikah, Umroh, atau Haji dengan rencana keuangan terstruktur
-      </p>
-      <button id="startButton" onclick="nextPage('page2')">Mulai Merencanakan</button>
-    </div>
+    <!-- Halaman Home -->
+    <div id="home" class="page">
+      <div class="hero-section">
+        <div class="left-content">
+          <h2 class="bold-text">Web Planner Nabung Impian</h2>
+          <p>
+            Wujudkan impian Nikah, Umroh, atau Haji dengan rencana keuangan
+            terstruktur
+          </p>
+          <button id="startButton" onclick="nextPage('page2')">
+            Mulai Merencanakan
+          </button>
+        </div>
 
-    <div class="right-image">
-      <img src="bg.png" alt="Gambar Home" />
+        <div class="right-image">
+          <img src="./images/bg.png" alt="Gambar Home" />
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
 
     <!-- Halaman 2 -->
-    <section id="page2" class="page" style="padding-top: 120px">
-      <h2>Pilih Tujuan Impian </h2>
-      <br>
-      <p>Silakan pilih salah satu:</p>
-      <div class="goal-buttons">
-        <button onclick="selectGoal('Nikah'); nextPage('page3')">
-          <img
-            src="https://img.freepik.com/free-vector/bride-groom-getting-married_52683-31783.jpg"
-            alt="Nikah"
-          />
-          <span>Nikah</span>
-        </button>
-        <button onclick="selectGoal('Umroh'); nextPage('page3')">
-          <img
-            src="https://img.freepik.com/premium-vector/muslim-family-performing-tawaf-hajj-privilege-muslim-people-wearing-ihram-hajj-with-kabah-building_135661-7.jpg"
-            alt="Umroh"
-          />
-          <span>Umroh</span>
-        </button>
-        <button onclick="selectGoal('Haji'); nextPage('page3')">
-          <img
-            src="https://img.freepik.com/premium-vector/happy-eid-al-adha-islamic-holy-city-mecca-kaaba-building_546897-389.jpg"
-            alt="Haji"
-          />
-          <span>Haji</span>
-        </button>
+    <section id="page2" class="page">
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+        "
+      >
+        <h2>Pilih Tujuan Impian</h2>
+        <br />
+        <p>Silakan pilih salah satu:</p>
+        <div class="goal-buttons">
+          <button onclick="selectGoal('Nikah'); nextPage('page3')">
+            <img
+              src="https://img.freepik.com/free-vector/bride-groom-getting-married_52683-31783.jpg"
+              alt="Nikah"
+            />
+            <span>Nikah</span>
+          </button>
+          <button onclick="selectGoal('Umroh'); nextPage('page3')">
+            <img
+              src="https://img.freepik.com/premium-vector/muslim-family-performing-tawaf-hajj-privilege-muslim-people-wearing-ihram-hajj-with-kabah-building_135661-7.jpg"
+              alt="Umroh"
+            />
+            <span>Umroh</span>
+          </button>
+          <button onclick="selectGoal('Haji'); nextPage('page3')">
+            <img
+              src="https://img.freepik.com/premium-vector/happy-eid-al-adha-islamic-holy-city-mecca-kaaba-building_546897-389.jpg"
+              alt="Haji"
+            />
+            <span>Haji</span>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -117,73 +145,82 @@
     <div id="page3" class="page" style="padding-top: 60px">
       <h2>Perhitungan Tabungan</h2>
       <div id="formContainer">
-      <form id="saving-form">
-        <label for="goal">Tujuan:</label>
-        <select id="goal" name="goal">
-          <option value="Nikah">Nikah</option>
-          <option value="Umroh">Umroh</option>
-          <option value="Haji">Haji</option>
-        </select>
-
-        <div class="form-group">
-          <label for="target">Target Dana:</label>
-          <div class="input-group">
-            <input type="number" id="target" min="1" step="0.01" required />
-            <span>juta rupiah</span>
-          </div>
-          <small>Contoh: 25 untuk Rp25.000.000</small>
-        </div>
-
-        <div class="form-group">
-          <label for="duration">Jangka Waktu:</label>
-          <input type="number" id="duration" min="1" max="60" required />
-          <span>bulan</span>
-        </div>
-
-        <div class="form-group">
-          <label for="initial">Tabungan Bulan Pertama:</label>
-          <div class="input-group">
-            <input type="number" id="initial" min="0.1" step="0.01" required />
-            <span>juta rupiah</span>
-          </div>
-          <small>Contoh: 1.5 untuk Rp1.500.000</small>
-        </div>
-
-        <div class="form-group">
-          <label for="method">Metode Menabung:</label>
-          <select id="method" required>
-            <option value="">-- Pilih Metode --</option>
-            <option value="flat">Flat (Nominal tetap)</option>
-            <option value="arithmetic">Naik Bertahap (Deret Aritmatika)</option>
-            <option value="geometric">Naik Cepat (Deret Geometri)</option>
+        <form id="saving-form">
+          <label for="goal">Tujuan:</label>
+          <select id="goal" name="goal">
+            <option value="Nikah">Nikah</option>
+            <option value="Umroh">Umroh</option>
+            <option value="Haji">Haji</option>
           </select>
-        </div>
 
-        <div class="form-group" id="incrementContainer" style="display: none">
-          <label for="increment">Tambahan per Bulan:</label>
-          <div class="input-group">
-            <input type="number" id="increment" min="0" step="0.01" />
-            <span>juta rupiah</span>
+          <div class="form-group">
+            <label for="target">Target Dana:</label>
+            <div class="input-group">
+              <input type="number" id="target" min="1" step="0.01" required />
+              <span>juta rupiah</span>
+            </div>
+            <small>Contoh: 25 untuk Rp25.000.000</small>
           </div>
-          <small>Contoh: 0.2 untuk Rp200.000</small>
-        </div>
 
-        <div class="form-group" id="multiplierContainer" style="display: none">
-          <label for="multiplier">Kelipatan per Bulan:</label>
-          <input type="number" id="multiplier" min="1" step="0.1" />
-          <small>Contoh: 1.5 untuk naik 50% tiap bulan</small>
-        </div>
+          <div class="form-group">
+            <label for="duration">Jangka Waktu:</label>
+            <input type="number" id="duration" min="1" max="60" required />
+            <span>bulan</span>
+          </div>
 
-        <button type="button" class="start-button" onclick="calculatePlan()">
-          Hitung Rencana
-        </button>
-         
-      </form>
+          <div class="form-group">
+            <label for="initial">Tabungan Bulan Pertama:</label>
+            <div class="input-group">
+              <input
+                type="number"
+                id="initial"
+                min="0.1"
+                step="0.01"
+                required
+              />
+              <span>juta rupiah</span>
+            </div>
+            <small>Contoh: 1.5 untuk Rp1.500.000</small>
+          </div>
+
+          <div class="form-group">
+            <label for="method">Metode Menabung:</label>
+            <select id="method" required>
+              <option value="">-- Pilih Metode --</option>
+              <option value="flat">Flat (Nominal tetap)</option>
+              <option value="arithmetic">
+                Naik Bertahap (Deret Aritmatika)
+              </option>
+              <option value="geometric">Naik Cepat (Deret Geometri)</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="incrementContainer" style="display: none">
+            <label for="increment">Tambahan per Bulan:</label>
+            <div class="input-group">
+              <input type="number" id="increment" min="0" step="0.01" />
+              <span>juta rupiah</span>
+            </div>
+            <small>Contoh: 0.2 untuk Rp200.000</small>
+          </div>
+
+          <div
+            class="form-group"
+            id="multiplierContainer"
+            style="display: none"
+          >
+            <label for="multiplier">Kelipatan per Bulan:</label>
+            <input type="number" id="multiplier" min="1" step="0.1" />
+            <small>Contoh: 1.5 untuk naik 50% tiap bulan</small>
+          </div>
+
+          <button type="button" class="start-button" onclick="calculatePlan()">
+            Hitung Rencana
+          </button>
+        </form>
       </div>
       <!-- Hasil -->
       <div class="container hidden" id="resultContainer">
-        
-
         <div class="motivation" id="motivationText"></div>
 
         <div class="progress-container">
@@ -204,69 +241,80 @@
             <tbody id="tableBody"></tbody>
           </table>
         </div>
-        
-       <button id="startButton" onclick="goToFormPage()">Buat Rencana Baru</button>
 
+        <button id="startButton" onclick="goToFormPage()">
+          Buat Rencana Baru
+        </button>
       </div>
     </div>
 
     <!-- Tambahan Section Kosong untuk 'About' dan 'Menu' agar tidak error -->
-    <section id="about" class="page" style="display: none; padding-top: 120px">
-      <h1 class="about-title">Our Team</h1>
-      <div class="team-container">
-        <div class="card">
-          <img src="adam.png" alt="Adam" />
-          <div class="name-tag">Adam Malik Rizkiansyah</div>
-          <p>247006111001</p>
-          <a href="https://www.instagram.com/_dam_dam____" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
+    <section id="about" class="page" style="display: none">
+      <div
+        style="
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <h1 class="about-title">Our Team</h1>
+        <div class="team-container">
+          <div class="card">
+            <img src="./images/adam.png" alt="Adam" />
+            <div class="name-tag">Adam Malik Rizkiansyah</div>
+            <p>247006111001</p>
+            <a href="https://www.instagram.com/_dam_dam____" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
 
-        <div class="card">
-          <img src="gea.png" alt="Ghea" />
-          <div class="name-tag">Ghea Ragil Aulia</div>
-          <p>247006111003</p>
-          <a href="https://instagram.com/gearaaulia" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
+          <div class="card">
+            <img src="./images/gea.png" alt="Ghea" />
+            <div class="name-tag">Ghea Ragil Aulia</div>
+            <p>247006111003</p>
+            <a href="https://instagram.com/gearaaulia" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
 
-        <div class="card">
-          <img src="raden.png" alt="Raden" />
-          <div class="name-tag">Raden Annisa Dwi M</div>
-          <p>247006111010</p>
-          <a href="https://instagram.com/rdnannisaa_" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
+          <div class="card">
+            <img src="./images/raden.png" alt="Raden" />
+            <div class="name-tag">Raden Annisa Dwi M</div>
+            <p>247006111010</p>
+            <a href="https://instagram.com/rdnannisaa_" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
 
-        <div class="card">
-          <img src="wafa.png" alt="Wafa" />
-          <div class="name-tag">Wafa Faujiah</div>
-          <p>247006111026</p>
-          <a href="https://instagram.com/fll.w_" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
+          <div class="card">
+            <img src="./images/wafa.png" alt="Wafa" />
+            <div class="name-tag">Wafa Faujiah</div>
+            <p>247006111026</p>
+            <a href="https://instagram.com/fll.w_" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
 
-        <div class="card">
-          <img src="yahya.png" alt="Yahya" />
-          <div class="name-tag">Mohammad Yahya Al-Fadhil</div>
-          <p>247006111032</p>
-          <a href="https://instagram.com/yahya.mhmd_" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
+          <div class="card">
+            <img src="./images/yahya.png" alt="Yahya" />
+            <div class="name-tag">Mohammad Yahya Al-Fadhil</div>
+            <p>247006111032</p>
+            <a href="https://instagram.com/yahya.mhmd_" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <div id="popupModal" class="modal hidden">
-  <div class="modal-content">
-    <div id="popupMotivationText"></div>
-    <button id="showResultsBtn">Lihat Hasil Rencana</button>
-  </div>
-</div>
+      <div class="modal-content">
+        <div id="popupMotivationText"></div>
+        <button id="showResultsBtn">Lihat Hasil Rencana</button>
+      </div>
+    </div>
 
     <script src="kalkulus2.js" defer></script>
   </body>

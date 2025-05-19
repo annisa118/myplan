@@ -120,7 +120,7 @@ function displayResults(goal, target, duration, total, savings) {
   // Tampilkan modal popup
   const popupModal = document.getElementById("popupModal");
   popupModal.classList.remove("hidden");
-  popupModal.classList.add("show"); 
+  popupModal.classList.add("show");
 
   // Jangan tampilkan hasil dulu, sembunyikan kontainer hasil
   document.getElementById("resultContainer").classList.add("hidden");
@@ -176,7 +176,9 @@ document.getElementById("showResultsBtn").addEventListener("click", () => {
 
   // Tampilkan hasilnya
   document.getElementById("resultContainer").classList.remove("hidden");
-  document.getElementById("resultContainer").scrollIntoView({ behavior: "smooth" });
+  document
+    .getElementById("resultContainer")
+    .scrollIntoView({ behavior: "smooth" });
 });
 
 // Fungsi reset
@@ -262,17 +264,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Navbar scroll effect
 
+document
+  .getElementById("showResultsBtn")
+  .addEventListener("click", function () {
+    // Sembunyikan popup
+    document.getElementById("popupModal").classList.add("hidden");
 
-document.getElementById("showResultsBtn").addEventListener("click", function () {
-  // Sembunyikan popup
-  document.getElementById("popupModal").classList.add("hidden");
+    // Sembunyikan form input
+    document.getElementById("formContainer").classList.add("hidden");
 
-  // Sembunyikan form input
-  document.getElementById("formContainer").classList.add("hidden");
-
-  // Tampilkan hasil
-  document.getElementById("resultContainer").classList.remove("hidden");
-});
+    // Tampilkan hasil
+    document.getElementById("resultContainer").classList.remove("hidden");
+  });
 
 function goToFormPage() {
   // Tampilkan halaman kalkulasi
@@ -290,3 +293,35 @@ function goToFormPage() {
   // (Opsional) Reset form
   document.getElementById("saving-form").reset();
 }
+
+// Fungsi untuk toggle menu mobile
+function toggleMenu() {
+  const menuMobile = document.querySelector(".menu-mobile");
+  menuMobile.classList.toggle("active");
+
+  // Animasi hamburger menu
+  const bars = document.querySelectorAll(".bar");
+  if (menuMobile.classList.contains("active")) {
+    bars[0].style.transform = "rotate(-45deg) translate(-5px, 6px)";
+    bars[1].style.opacity = "0";
+    bars[2].style.transform = "rotate(45deg) translate(-5px, -6px)";
+  } else {
+    bars[0].style.transform = "none";
+    bars[1].style.opacity = "1";
+    bars[2].style.transform = "none";
+  }
+}
+
+// Tutup menu mobile saat link diklik
+document.querySelectorAll(".menu-mobile a").forEach((link) => {
+  link.addEventListener("click", () => {
+    const menuMobile = document.querySelector(".menu-mobile");
+    menuMobile.classList.remove("active");
+
+    // Reset hamburger menu
+    const bars = document.querySelectorAll(".bar");
+    bars[0].style.transform = "none";
+    bars[1].style.opacity = "1";
+    bars[2].style.transform = "none";
+  });
+});
